@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VibeCheck 411L</title>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #22c55e;
+      --accent-2: #38bdf8;
+      --danger: #ef4444;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a, #020617);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: var(--card);
+      border: 2px solid #1f2937;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 8px;
+      color: var(--accent-2);
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 24px;
+      color: var(--muted);
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    button {
+      padding: 12px 14px;
+      border-radius: 10px;
+      border: 2px solid #1f2937;
+      background: #020617;
+      color: var(--text);
+      font-size: 15px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent-2);
+      box-shadow: 0 6px 18px rgba(56,189,248,0.3);
+    }
+
+    #btnSmash {
+      background: linear-gradient(135deg, #7c2d12, #ef4444);
+      border-color: #ef4444;
+    }
+
+    #btnSmash:hover {
+      box-shadow: 0 6px 20px rgba(239,68,68,0.5);
+    }
+
+    #btnSecret {
+      background: linear-gradient(135deg, #064e3b, #22c55e);
+      border-color: #22c55e;
+    }
+
+    #btnSecret:hover {
+      box-shadow: 0 6px 20px rgba(34,197,94,0.5);
+    }
+
+    .output-box {
+      border: 2px dashed #334155;
+      border-radius: 12px;
+      padding: 16px;
+      background: #020617;
+    }
+
+    .output-box h2 {
+      margin-bottom: 10px;
+      color: var(--accent);
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #e5e7eb;
+      font-size: 14px;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>✨ VibeCheck 411L ✨</h1>
+    <p>Smash buttons. Fetch vibes. Check your luck.</p>
+
+    <div class="buttons">
+      <button id="btnFortune">🔮 Fortune</button>
+      <button id="btnJoke">😂 Joke</button>
+
+      <button data-mood="happy" class="btnMood">😄 Happy</button>
+      <button data-mood="tired" class="btnMood">🥱 Tired</button>
+      <button data-mood="stressed" class="btnMood">😵‍💫 Stressed</button>
+
+      <button id="btnSmash">💥 SMASH</button>
+      <button id="btnSecret">🕵️ Secret</button>
+    </div>
+
+    <div class="output-box">
+      <h2>Output</h2>
+      <pre id="out">Ready...</pre>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

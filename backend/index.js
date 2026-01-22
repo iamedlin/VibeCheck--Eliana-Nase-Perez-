@@ -79,11 +79,22 @@ app.get("/api/vibe", (req, res) => {
 
 // Increments smash counter
 app.post("/api/smash", (req, res) => {
+  // Smash counter resets when the server restarts (in-memory storage)
+  let smashes = 0;
   smashes += 1;
-  res.json({ smashes });
+  res.json({
+    message: "SMASH registered 💥",
+    smashes,
+    serverTime: new Date().toISOString()
+  });
 });
 
+
 // Returns current smash count
+=======
+
+// GET /api/smashes -> returns current counter
+
 app.get("/api/smashes", (req, res) => {
   res.json({ smashes });
 });
