@@ -72,6 +72,8 @@ app.get("/api/vibe", (req, res) => {
 
 // POST /api/smash -> increases counter and returns the updated value
 app.post("/api/smash", (req, res) => {
+  // Smash counter resets when the server restarts (in-memory storage)
+  let smashes = 0;
   smashes += 1;
   res.json({
     message: "SMASH registered 💥",
