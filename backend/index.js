@@ -76,7 +76,7 @@ app.post("/api/smash", (req, res) => {
   res.json({
     message: "SMASH registered 💥",
     smashes,
-    at: new Date().toISOString()
+    serverTime: new Date().toISOString()
   });
 });
 
